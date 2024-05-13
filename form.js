@@ -11,3 +11,4 @@ form.addEventListener('submit', (e) => {
     alert('Por favor, complete los campos correctamente.');
   }
 });
+
