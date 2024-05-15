@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
 </head>
-
 <body>
-    <form action="" class="form">
-        <div>
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="user_name" required minlength="4" />
+    <form class="form">
+        <h2>Formulario de contacto</h2>
+        <div class="form_input" >
+            <label for="name">Nombre</label>
+            <input type="text" id="name" required minlength="3" placeholder="Joe">
         </div>
-        <div>
-            <label for="mail">Correo electrónico:</label>
-            <input type="email" id="mail" name="user_email" required />
+        <div class="form_input">
+            <label for="mail">e-mail</label>
+            <input type="email" id="mail" placeholder="example@example.com" required>
         </div>
-        <div>
-            <label for="msg">Mensaje:</label>
-            <textarea id="msg" name="user_message" required></textarea>
+        <div class="form_input">
+            <label for="number">Telefono</label>
+            <input type="number" id="number" required placeholder="266-4929134">
+        </div>
+        <div class="form_input">
+            <label for="text">Mensaje</label>
+            <textarea class="comment" id="text" rows="7" placeholder="escribe tu mensaje..." minlength="10" required></textarea>
         </div>
         <div class="button">
-            <button type="submit">Enviar mensaje</button>
+            <button>
+                Enviar
+            </button>
         </div>
     </form>
-    <script src="funcion.js"></script>
+    <script src="form.js"></script>
 </body>
-
 </html>
