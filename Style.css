@@ -13,6 +13,7 @@ body{
 img{
     max-width: 100%;
 }
+
 .container{
     max-width: 1200px;
     margin: 0 auto;
@@ -122,7 +123,7 @@ h2{
     grid-template-columns: repeat(3,1fr);
     gap: 50px;
 }
-.produc-1{
+.produc-1,.produc-2,.produc-3,.produc-4,.produc-5,.produc-6,.produc-7,.produc-8,.produc-9{
     background-color: #2a223a;
 }
 .produc-txt{
@@ -181,10 +182,11 @@ input{
     margin-right: 0;
 }
 .footer{
+    position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    padding: 50px 0;
+    padding: 50px 0; 
 }
 .link ul{
     display: flex;
@@ -196,6 +198,7 @@ input{
 }
 .link ul li > a:hover {
     color: #ff5a2c;
+    font-size: x-large;
 }
 @media(max-width:991px){
     .menu{
