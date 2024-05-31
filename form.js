@@ -1,58 +1,73 @@
-const form = document.getElementById("contact-form");
-const errorContainer = document.getElementById("error-list");
-
-const nombre = document.getElementById("name").value;
-const email = document.getElementById("mail").value;
-const numero = document.getElementById("numero").value;
-const mensaje = document.getElementById("mensaje").value;
-
-function validarNombre(nombre) {
-  const regExName = /^[a-z A-Z]{0,20}$/;
-  if (nombre.trim() === "") {
-    mostrarMensaje("Por favor, ingrese su nombre.");
-    return;
-  } else if (!validarNombre(nombre)) {
-    mostrarMensaje("Por favor, ingrese un nombre válido.");
-    return;
-  }
-  return regExName.test(nombre);
-}
-
-function validarNumero(numero) {
-  const regExNum = /^[1-9]d{9}$/;
-  if (numero.trim() === "") {
-    mostrarMensaje("El numero no puede estar vacio");
-    return;
-  } else if (!validarNumero(numero)) {
-    mostrarMensaje("el numero tiene que ser sin el 0 y sin el 15");
-    return;
-  }
-  return regExNum.test(numero);
-}
-
-function validarEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (email.trim() === "") {
-    mostrarMensaje("Debe ingresar su e-mail");
-    return;
-  } else if (!validarEmail(email)) {
-    mostrarMensaje("Debe ingresar un e-mail valido");
-    return;
-  }
-  return emailRegex.test(email);
-}
+const form = document.getElementById('contact-form')
+const errorContainer = document.getElementById('error-list')
 
 function mostrarMensaje(mensaje) {
-  const errorElement = document.createElement("p");
-  if (mensaje.trim() === "") {
-    mostrarMensaje("Debe agregar un mensaje");
-    return;
-  }
-  errorElement.textContent = mensaje;
-  errorContainer.appendChild(errorElement);
+const errorElement = document.createElement('p')
+errorElement.textContent = mensaje;
+errorContainer.appendChild(errorElement)
 }
 
 function validarFormulario(event) {
-  event.preventDefault();
-  errorContainer.innerHTML = "";
+event.preventDefault();
+
+errorContainer.innerHTML = ''
+
+const nombre = document.getElementById('nombre').value
+const email = document.getElementById('mail').value
+const numero = document.getElementById('numero').value
+const mensaje = document.getElementById('mensaje').value
+
+if(nombre.trim() === '' && email.trim() === '' && numero.trim() === '' && mensaje.trim() === ''){
+    mostrarMensaje('Por favor, rellene todos los campos antes de enviar el formulario.')
+    return
 }
+
+if (nombre.trim() === '') {
+    mostrarMensaje('Por favor, ingrese su nombre.')
+    return
+}else if (!validarNombre(nombre)) {
+    mostrarMensaje('Por favor, ingrese un nombre válido.')
+    return
+}
+
+if (email.trim() === '') {
+    mostrarMensaje('Por favor, ingrese su correo electrónico.')
+    return
+} else if (!validarEmail(email)) {
+    mostrarMensaje('Por favor, ingrese un correo electrónico válido.')
+    return
+}
+
+if (numero.trim() === '') {
+    mostrarMensaje('Por favor, ingrese su numero')
+    return
+}else if (!validarNumero(numero)) {
+    mostrarMensaje('el formato de numero debe ser: Ej: 2664000000')
+    return
+}
+
+if (mensaje.trim() === ''){
+    mostrarMensaje('debe escribir un mensaje')
+    return
+}
+mostrarMensaje(
+    'El formulario fue enviado correctamente ' + 
+    'Datos enviados: ' + 'Nombre: ' + nombre +', Email: ' + email + ', Numero: ' + numero)
+}
+
+function validarEmail(email) {
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+return emailRegex.test(email)
+}
+
+function validarNombre(nombre) {
+    const regExLetra = /^[a-z A-Z]{0,20}$/
+    return regExLetra.test(nombre)
+}
+
+function validarNumero(numero) {
+    const regex_tel = /^[1-9]\d{9}$/;
+    return regex_tel.test(numero)
+}
+
+form.addEventListener('submit', validarFormulario)

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="form.js">
     <link rel="shortcut icon" href="1.png" type="image/x-icon">
+    <link rel="stylesheet" href="carrusel.css">
 </head>
 <body>
     <header class="header">
@@ -19,7 +20,7 @@
                     <li><a href="#">Inicio</a></li>
                     <li><a href="#">Servicios</a></li>
                     <li><a href="#">Producto</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="form.html">Contacto</a></li>
                 </ul>
             </nav>
         </div>
@@ -28,7 +29,7 @@
                 <h1>ニコの事</h1>
                 <p>Presenta las Nuevas comidas Asiaticas</p>
                 <div class="butons">
-                    <a href="#" class="btn-1">Informacion</a>
+                    <a href="informacion.html" class="btn-1">Informacion</a>
                     <a href="#" class="btn-1">Comidas</a>
                 </div>
             </div>
@@ -36,12 +37,69 @@
     </header>
     <section class="popular container">
         <h2>Sugeridos</h2>
-        <div class="popular-content">
-          <img src="images/p1.jpg" alt="">
-          <img src="images/p2.jpg" alt="">
-          <img src="images/p3.jpg" alt="">
-          <img src="images/p4.jpg" alt="">
-          <img src="images/p5.jpg" alt="">
+        <div>           
+            <section class="carruselImg">
+                <div class="carrusel__container container">
+                    <img src="./images/1904658-arrow-arrow-left-change-direction-left-next-undo_122508.svg" class="carrusel__arrow" id="before">
+    
+                    <section class="carrusel__body carrusel__body--show" data-id="1">
+                        <figure class="carrusel__picture">
+                            <img src="./images/p1.jpg" class="carrusel__img">
+                        </figure>
+                    </section>
+    
+                    <section class="carrusel__body" data-id="2">  
+                        <figure class="carrusel__picture">
+                            <img src="./images/p2.jpg" class="carrusel__img">
+                        </figure>
+                    </section>
+    
+                    <section class="carrusel__body" data-id="3">
+                        <figure class="carrusel__picture">
+                            <img src="./images/p3.jpg" class="carrusel__img">
+                        </figure>
+                    </section>
+    
+                    <section class="carrusel__body" data-id="4">
+                        <figure class="carrusel__picture">
+                            <img src="./images/p4.jpg" class="carrusel__img">
+                        </figure>
+                    </section>
+    
+                    <section class="carrusel__body" data-id="5">
+                        <figure class="carrusel__picture">
+                            <img src="./images/p5.jpg" class="carrusel__img">
+                        </figure>
+                    </section>
+    
+                    <section class="carrusel__body" data-id="6">
+                        <figure class="carrusel__picture">
+                            <img src="./images/p6.jpg" class="carrusel__img">
+                        </figure>
+                    </section>
+    
+                    <section class="carrusel__body" data-id="7">
+                        <figure class="carrusel__picture">
+                            <img src="./images/p7.jpg" class="carrusel__img">
+                        </figure>
+                    </section>
+    
+                    <section class="carrusel__body" data-id="8">
+                        <figure class="carrusel__picture">
+                            <img src="./images/p8.jpg" class="carrusel__img">
+                        </figure>
+                    </section>
+    
+                    <section class="carrusel__body" data-id="9">
+                        <figure class="carrusel__picture">
+                            <img src="./images/p9.jpg" class="carrusel__img">
+                        </figure>
+                    </section>
+    
+    
+                    <img src="./images/1904671-arrow-arrow-right-change-direction-next-page-right_122521.svg" class="carrusel__arrow" id="next">
+                </div>
+        </section>
         </div>
     </section>
     <main class="produc container">
@@ -153,5 +211,6 @@
             </ul>
         </div>
     </footer>
+    <script src="slider.js"></script>
 </body>
 </html>
